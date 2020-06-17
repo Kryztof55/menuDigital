@@ -1,11 +1,11 @@
 import React from 'react';
-import NavBottom from './index';
+import SideMenu from './index';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
-export const NavBottomView = () => <NavBottom></NavBottom>;
+export const SideMenuView = () => <SideMenu>test</SideMenu>;
 export default {
-    title: 'Nav Bottom',
+    title: 'SideMenu',
     decorators: [withKnobs],
     parameters: {
         viewport: {
