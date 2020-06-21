@@ -12,7 +12,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: 345,
+        maxWidth: '100%',
     },
     color: {
         color: (props) => (props.color == 'red' ? '#FE6B8B' : '#D3D3D3'),
@@ -47,7 +47,14 @@ const AddButton = (props) => {
     );
 };
 
-export default function FoodCard() {
+export default function FoodCard({
+    nombrePlatillo,
+    costoPlatillo,
+    imgUrl,
+    title,
+    description,
+    addToOrder,
+}) {
     const classes = useStyles();
     const [added, setAdded] = useState(false);
     const handleAddToOrder = () => {
@@ -60,15 +67,10 @@ export default function FoodCard() {
                 title={nombrePlatillo}
                 subheader={`${costoPlatillo} MNX`}
             />
-            <CardMedia
-                className={classes.media}
-                image="/img/paella.jpg"
-                title="Paella especial"
-            />
+            <CardMedia className={classes.media} image={imgUrl} title={title} />
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    Deliciosa paella con Camarón y sazonada con especias, con
-                    jitomate y más descripción
+                    {description}
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -77,7 +79,7 @@ export default function FoodCard() {
                     onClick={handleAddToOrder}
                 />
                 <Typography variant="body2" color="textSecondary" component="p">
-                    Agregar a órden
+                    {addToOrder}
                 </Typography>
             </CardActions>
         </Card>

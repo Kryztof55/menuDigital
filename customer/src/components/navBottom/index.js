@@ -14,9 +14,15 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 import Menu from '../../utils/menu';
+
 const useStyles = makeStyles({
     root: {
-        width: `100%`,
+        width: '100%',
+    },
+    navBottom: {
+        position: 'fixed',
+        width: '100%',
+        bottom: 0,
     },
 });
 
@@ -31,7 +37,7 @@ const NavBottom = () => {
         setState({ ...state, [anchor]: open });
     };
     return (
-        <Paper elevation={3} square>
+        <Paper elevation={3} square className={classes.navBottom}>
             <BottomNavigation
                 value={value}
                 onChange={(event, newValue) => {
