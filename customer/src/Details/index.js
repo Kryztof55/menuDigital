@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { purple } from '@material-ui/core/colors';
 import TopBar from '../components/topBar';
+import { Router, Switch, Route } from 'react-router-dom';
+const PageDetails = (props) => {
+    const [detailId, setDetailId] = useState(props.location.state);
 
-const PageDetails = () => {
     const theme = createMuiTheme({
         palette: {
             primary: {
@@ -19,7 +21,7 @@ const PageDetails = () => {
     });
     return (
         <ThemeProvider theme={theme}>
-            <TopBar></TopBar>
+            <p>{`Test ${detailId}`}</p>
         </ThemeProvider>
     );
 };
