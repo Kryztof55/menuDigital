@@ -14,7 +14,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 import Menu from '../../utils/menu';
-
+import history from '../../history';
 const useStyles = makeStyles({
     root: {
         width: '100%',
@@ -36,6 +36,11 @@ const NavBottom = () => {
     const toggleDrawer = (anchor, open) => (event) => {
         setState({ ...state, [anchor]: open });
     };
+    const handleClickHome = () => {
+        history.push({
+            pathname: '/',
+        });
+    };
     return (
         <Paper elevation={3} square className={classes.navBottom}>
             <BottomNavigation
@@ -45,7 +50,11 @@ const NavBottom = () => {
                 }}
                 showLabels
                 className={classes.root}>
-                <BottomNavigationAction label="Inicio" icon={<HomeIcon />} />
+                <BottomNavigationAction
+                    label="Inicio"
+                    icon={<HomeIcon />}
+                    onClick={handleClickHome}
+                />
                 <BottomNavigationAction label="Orden" icon={<AlarmOnIcon />} />
                 <BottomNavigationAction
                     onClick={toggleDrawer('right', true)}

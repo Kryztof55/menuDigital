@@ -4,13 +4,13 @@ import history from '../history';
 import Grid from '@material-ui/core/Grid';
 import CardHightlight from '../components/cardHightlights';
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+
 /* hightlight Data change later */
 const hightlightData = [
     {
         id: 1,
         imgUrl: '/img/paella.jpg',
-        hightlight: 'Deasayunos',
+        hightlight: 'Desayunos',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         link: '/desayunos',
@@ -56,9 +56,9 @@ const Home = () => {
     const classes = useStyles();
     return (
         <Container maxWidth="md" className={classes.container}>
-            <Typography variant="h6" gutterBottom>
+            {/* <Typography variant="h4" gutterBottom>
                 Destacados
-            </Typography>
+            </Typography> */}
             <Grid container spacing={3}>
                 {hightlightData.map((item, index) => {
                     return (
