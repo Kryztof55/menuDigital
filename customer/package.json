@@ -11,7 +11,11 @@
         "node-sass": "^4.14.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
-        "react-scripts": "3.4.1"
+        "react-redux": "^7.2.0",
+        "react-scripts": "3.4.1",
+        "redux": "^4.0.5",
+        "redux-devtools-extension": "^2.13.8",
+        "redux-thunk": "^2.3.0"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -51,6 +55,8 @@
         "@storybook/addons": "^5.3.19",
         "@storybook/preset-create-react-app": "^3.0.0",
         "@storybook/react": "^5.3.19",
-        "storybook-addon-responsive-views": "^2.3.0"
+        "storybook-addon-responsive-views": "^2.3.0",
+        "redux-devtools": "^3.5.0",
+        "redux-mock-store": "1.5.4"
     }
 }

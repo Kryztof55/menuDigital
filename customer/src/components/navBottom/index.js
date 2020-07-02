@@ -15,6 +15,14 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 import Menu from '../../utils/menu';
 import history from '../../history';
+import Modal from '@material-ui/core/Modal';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import { Hidden } from '@material-ui/core';
 const useStyles = makeStyles({
     root: {
         width: '100%',
@@ -23,6 +31,33 @@ const useStyles = makeStyles({
         position: 'fixed',
         width: '100%',
         bottom: 0,
+    },
+    modalInt: {
+        position: 'absolute',
+        width: 280,
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        padding: 20,
+        borderRadius: 10,
+        backgroundColor: 'white',
+        '&:focus': {
+            outline: 'none',
+        },
+    },
+    confirm: {
+        marginTop: 25,
+    },
+    tab: {
+        paddingLeft: 0,
+        paddingRight: 0,
+    },
+    textInOrder: {
+        width: 100,
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        marginRight: 20,
     },
 });
 
@@ -33,6 +68,15 @@ const NavBottom = () => {
     const [state, setState] = useState({
         right: false,
     });
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
     const toggleDrawer = (anchor, open) => (event) => {
         setState({ ...state, [anchor]: open });
     };
@@ -55,7 +99,11 @@ const NavBottom = () => {
                     icon={<HomeIcon />}
                     onClick={handleClickHome}
                 />
-                <BottomNavigationAction label="Orden" icon={<AlarmOnIcon />} />
+                <BottomNavigationAction
+                    label="Orden"
+                    onClick={handleOpen}
+                    icon={<AlarmOnIcon />}
+                />
                 <BottomNavigationAction
                     onClick={toggleDrawer('right', true)}
                     label="Menú"
@@ -79,6 +127,46 @@ const NavBottom = () => {
                     ))}
                 </List>
             </SwipeableDrawer>
+            <Modal
+                className="modal"
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description">
+                <div className={classes.modalInt}>
+                    <Typography variant="h4">Revisa tu orden</Typography>
+                    <List>
+                        <ListItem className={classes.tab}>
+                            <Typography
+                                className={classes.textInOrder}
+                                variant="body2">
+                                Aquí va el platillo
+                            </Typography>
+                            <ListItemText primary="$300" />
+                            <IconButton aria-label="delete">
+                                <EditIcon />
+                            </IconButton>
+                            <IconButton aria-label="delete">
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItem>
+                        <Divider />
+                    </List>
+                    <Typography variant="h6">Total $ 300</Typography>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="center"
+                        alignItems="center">
+                        <Button
+                            className={classes.confirm}
+                            variant="contained"
+                            color="primary">
+                            Confirmar
+                        </Button>
+                    </Grid>
+                </div>
+            </Modal>
         </Paper>
     );
 };

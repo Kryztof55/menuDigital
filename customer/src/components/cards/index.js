@@ -8,6 +8,7 @@ import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
+
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles((theme) => ({
@@ -61,6 +62,7 @@ export default function FoodCard({
         !added ? setAdded(true) : setAdded(false);
         /* Function to send to state */
     };
+
     return (
         <Card className={classes.root}>
             <CardHeader

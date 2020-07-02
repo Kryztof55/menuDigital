@@ -1,29 +1,29 @@
 {
-    "hightlight": [
+    "hightlights": [
         {
             "id": 1,
-            "imgUrl": "/img/paella.jpg",
+            "imgUrl": "/img/desayuno.jpg",
             "hightlight": "Desayunos",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "link": "/desayunos"
         },
         {
             "id": 2,
-            "imgUrl": "/img/paella.jpg",
+            "imgUrl": "/img/comida.jpg",
             "hightlight": "Comidas",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "link": "/comidas"
         },
         {
             "id": 3,
-            "imgUrl": "/img/paella.jpg",
+            "imgUrl": "/img/cena.jpg",
             "hightlight": "Cenas",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "link": "/cenas"
         },
         {
             "id": 4,
-            "imgUrl": "/img/paella.jpg",
+            "imgUrl": "/img/promociones.jpg",
             "hightlight": "Promociones",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "link": "/Promociones"

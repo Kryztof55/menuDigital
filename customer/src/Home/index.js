@@ -1,45 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import history from '../history';
 import Grid from '@material-ui/core/Grid';
 import CardHightlight from '../components/cardHightlights';
 import Container from '@material-ui/core/Container';
+import * as actions from '../actions/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
-/* hightlight Data change later */
-const hightlightData = [
-    {
-        id: 1,
-        imgUrl: '/img/paella.jpg',
-        hightlight: 'Desayunos',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        link: '/desayunos',
-    },
-    {
-        id: 2,
-        imgUrl: '/img/paella.jpg',
-        hightlight: 'Comidas',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        link: '/comidas',
-    },
-    {
-        id: 3,
-        imgUrl: '/img/paella.jpg',
-        hightlight: 'Cenas',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        link: '/cenas',
-    },
-    {
-        id: 4,
-        imgUrl: '/img/paella.jpg',
-        hightlight: 'Promociones',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        link: '/Promociones',
-    },
-];
 const useStyles = makeStyles((theme) => ({
     container: {
         paddingTop: theme.spacing(4),
@@ -53,14 +20,21 @@ const handleClick = (id) => {
     });
 };
 const Home = () => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(actions.getHightlights());
+    }, []);
     const classes = useStyles();
+    const hightlights = useSelector(
+        (state) => state.hightlightReducer.hightlights
+    );
+    if (!hightlights) {
+        return <h1>Cargando...</h1>;
+    }
     return (
         <Container maxWidth="md" className={classes.container}>
-            {/* <Typography variant="h4" gutterBottom>
-                Destacados
-            </Typography> */}
             <Grid container spacing={3}>
-                {hightlightData.map((item, index) => {
+                {hightlights.map((item, index) => {
                     return (
                         <Grid
                             item
@@ -77,6 +51,11 @@ const Home = () => {
                         </Grid>
                     );
                 })}
+                {/* {console.log(
+                    hightlights.map((item) => {
+                        item.id;
+                    })
+                )} */}
             </Grid>
         </Container>
     );
