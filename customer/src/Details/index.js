@@ -28,7 +28,6 @@ const PageDetails = (props) => {
         dispatch(actions.getDinner());
         dispatch(actions.getPromotions());
         content();
-        console.log(breakfast);
     }, []);
     const [detailId, setDetailId] = useState(props.location.state);
     const [typeFood, setTypeFood] = useState([]);

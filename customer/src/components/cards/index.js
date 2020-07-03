@@ -49,7 +49,7 @@ const AddButton = (props) => {
         </IconButton>
     );
 };
-const dishesArr = [];
+let dishesArr = [];
 const FoodCard = ({
     nombrePlatillo,
     costoPlatillo,
@@ -66,22 +66,23 @@ const FoodCard = ({
             nombrePlatillo,
             costoPlatillo,
         };
-
         if (!added) {
             setAdded(true);
             dishesArr.push(dish);
             dispatch(actions.postDishes(dishesArr));
         } else {
             setAdded(false);
-            // No sé como borrar el elemento del array por ahora qu+e facil
-
-            /* dispatch(
-                actions.postDishes(
-                    dishesArr.map((item, index) => {
-                        dishesArr.splice(index, item.nombrePlatillo);
-                    })
-                )
-            ); */
+            console.log(dishesArr);
+            const result = dishesArr.reduce((acc, value, index) => {
+                if (dish.nombrePlatillo != value.nombrePlatillo) {
+                    acc.push(value);
+                }
+                return acc;
+            }, []);
+            dishesArr = [];
+            dishesArr = result;
+            console.log(dishesArr);
+            dispatch(actions.postDishes(dishesArr));
         }
     };
 
