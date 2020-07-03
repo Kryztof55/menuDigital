@@ -72,4 +72,17 @@ const getPromotions = () => {
         }
     };
 };
-export { getHightlights, getBreakfast, getMeal, getDinner, getPromotions };
+const postDishes = (dishes) => {
+    return {
+        type: actionTypes.POST_DISHES_TO_STATE,
+        dishes,
+    };
+};
+export {
+    getHightlights,
+    getBreakfast,
+    getMeal,
+    getDinner,
+    getPromotions,
+    postDishes,
+};

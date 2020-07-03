@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import * as actions from '../../actions/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -47,20 +49,40 @@ const AddButton = (props) => {
         </IconButton>
     );
 };
-
-export default function FoodCard({
+const dishesArr = [];
+const FoodCard = ({
     nombrePlatillo,
     costoPlatillo,
     imgUrl,
     title,
     description,
     addToOrder,
-}) {
+}) => {
     const classes = useStyles();
     const [added, setAdded] = useState(false);
-    const handleAddToOrder = () => {
-        !added ? setAdded(true) : setAdded(false);
-        /* Function to send to state */
+    const dispatch = useDispatch();
+    const handlerAddToOrder = (nombrePlatillo, costoPlatillo) => {
+        const dish = {
+            nombrePlatillo,
+            costoPlatillo,
+        };
+
+        if (!added) {
+            setAdded(true);
+            dishesArr.push(dish);
+            dispatch(actions.postDishes(dishesArr));
+        } else {
+            setAdded(false);
+            // No sé como borrar el elemento del array por ahora qu+e facil
+
+            /* dispatch(
+                actions.postDishes(
+                    dishesArr.map((item, index) => {
+                        dishesArr.splice(index, item.nombrePlatillo);
+                    })
+                )
+            ); */
+        }
     };
 
     return (
@@ -78,7 +100,9 @@ export default function FoodCard({
             <CardActions disableSpacing>
                 <AddButton
                     color={!added ? 'default' : 'red'}
-                    onClick={handleAddToOrder}
+                    onClick={() => {
+                        handlerAddToOrder(nombrePlatillo, costoPlatillo);
+                    }}
                 />
                 <Typography variant="body2" color="textSecondary" component="p">
                     {addToOrder}
@@ -86,4 +110,5 @@ export default function FoodCard({
             </CardActions>
         </Card>
     );
-}
+};
+export default FoodCard;

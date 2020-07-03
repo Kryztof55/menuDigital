@@ -22,7 +22,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { Hidden } from '@material-ui/core';
+import { useSelector } from 'react-redux';
 const useStyles = makeStyles({
     root: {
         width: '100%',
@@ -68,7 +68,9 @@ const NavBottom = () => {
     const [state, setState] = useState({
         right: false,
     });
+    const dishes = useSelector((state) => state.postDishesReducer.dishes);
     const [open, setOpen] = useState(false);
+    const [total, setTotal] = useState(0);
 
     const handleOpen = () => {
         setOpen(true);
@@ -136,23 +138,38 @@ const NavBottom = () => {
                 <div className={classes.modalInt}>
                     <Typography variant="h4">Revisa tu orden</Typography>
                     <List>
-                        <ListItem className={classes.tab}>
-                            <Typography
-                                className={classes.textInOrder}
-                                variant="body2">
-                                Aquí va el platillo
-                            </Typography>
-                            <ListItemText primary="$300" />
-                            <IconButton aria-label="delete">
-                                <EditIcon />
-                            </IconButton>
-                            <IconButton aria-label="delete">
-                                <DeleteIcon />
-                            </IconButton>
-                        </ListItem>
-                        <Divider />
+                        {!dishes ? (
+                            <p>Aún no agregas nada a tu orden</p>
+                        ) : (
+                            dishes.map((item, index) => {
+                                return (
+                                    <ListItem
+                                        key={index}
+                                        className={classes.tab}>
+                                        <Typography
+                                            className={classes.textInOrder}
+                                            variant="body2">
+                                            {item.nombrePlatillo}
+                                        </Typography>
+                                        <ListItemText
+                                            primary={`$ ${item.costoPlatillo} MNX`}
+                                        />
+                                        <IconButton aria-label="delete">
+                                            <DeleteIcon />
+                                        </IconButton>
+                                        <Divider />
+                                    </ListItem>
+                                );
+                            })
+                        )}
                     </List>
-                    <Typography variant="h6">Total $ 300</Typography>
+                    <Typography variant="h6">
+                        Total $
+                        {dishes?.reduce(
+                            (sum, { costoPlatillo }) => sum + costoPlatillo,
+                            0
+                        )}
+                    </Typography>
                     <Grid
                         container
                         direction="row"
