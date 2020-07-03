@@ -195,7 +195,8 @@ const PageDetails = (props) => {
                             imgUrl={item.imgUrl}
                             title={item.name}
                             description={item.description}
-                            addToOrder="Agregar a orden"></FoodCard>
+                            addToOrder="Agregar a orden"
+                            isAdded={item.isAdded}></FoodCard>
                     </Grid>
                 ))}
             </Grid>

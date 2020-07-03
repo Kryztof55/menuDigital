@@ -57,22 +57,26 @@ const FoodCard = ({
     title,
     description,
     addToOrder,
+    isAdded,
 }) => {
     const classes = useStyles();
     const [added, setAdded] = useState(false);
     const dispatch = useDispatch();
-    const handlerAddToOrder = (nombrePlatillo, costoPlatillo) => {
+    const dishes = useSelector((state) => state.postDishesReducer.dishes);
+    const handlerAddToOrder = (nombrePlatillo, costoPlatillo, isAdded) => {
         const dish = {
             nombrePlatillo,
             costoPlatillo,
+            isAdded: false,
         };
         if (!added) {
             setAdded(true);
+            dish.isAdded = true;
             dishesArr.push(dish);
             dispatch(actions.postDishes(dishesArr));
         } else {
             setAdded(false);
-            console.log(dishesArr);
+            dish.isAdded = false;
             const result = dishesArr.reduce((acc, value, index) => {
                 if (dish.nombrePlatillo != value.nombrePlatillo) {
                     acc.push(value);
@@ -81,7 +85,6 @@ const FoodCard = ({
             }, []);
             dishesArr = [];
             dishesArr = result;
-            console.log(dishesArr);
             dispatch(actions.postDishes(dishesArr));
         }
     };
@@ -102,7 +105,11 @@ const FoodCard = ({
                 <AddButton
                     color={!added ? 'default' : 'red'}
                     onClick={() => {
-                        handlerAddToOrder(nombrePlatillo, costoPlatillo);
+                        handlerAddToOrder(
+                            nombrePlatillo,
+                            costoPlatillo,
+                            isAdded
+                        );
                     }}
                 />
                 <Typography variant="body2" color="textSecondary" component="p">

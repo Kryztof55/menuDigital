@@ -5,28 +5,32 @@
             "imgUrl": "/img/americano.jpg",
             "name": "Desayuno Americano",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         },
         {
             "id": 2,
             "imgUrl": "/img/continental.jpg",
             "name": "Desayuno continental",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         },
         {
             "id": 3,
             "imgUrl": "/img/molletes.jpg",
             "name": "Molletes",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         },
         {
             "id": 4,
             "imgUrl": "/img/chilaquiles.jpg",
             "name": "Chilaquiles",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         }
     ],
     "comidas": [
@@ -35,28 +39,32 @@
             "imgUrl": "/img/arrachera.jpg",
             "name": "Arrachera Asada",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         },
         {
             "id": 2,
             "imgUrl": "/img/chile.jpg",
             "name": "Chile en nogada",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         },
         {
             "id": 3,
             "imgUrl": "/img/tacos.jpg",
             "name": "Tacos al pastor",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         },
         {
             "id": 4,
             "imgUrl": "/img/comida.jpg",
             "name": "Camarones a la diabla",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         }
     ],
     "cenas": [
@@ -65,28 +73,32 @@
             "imgUrl": "/img/chilaquiles.jpg",
             "name": "Chilaquiles",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         },
         {
             "id": 2,
             "imgUrl": "/img/mole.jpg",
             "name": "Mole",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         },
         {
             "id": 3,
             "imgUrl": "/img/tacos.jpg",
             "name": "Tacos al pastor",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         },
         {
             "id": 4,
             "imgUrl": "/img/cena.jpg",
             "name": "Pavo",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         }
     ],
     "promociones": [
@@ -95,14 +107,16 @@
             "imgUrl": "/img/trago.jpg",
             "name": "Segundo trago gratis",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         },
         {
             "id": 2,
             "imgUrl": "/img/cerveza.jpg",
             "name": "2x1 en cerveza artesanal",
             "price": 330,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isAdded": false
         }
     ]
 }

@@ -22,7 +22,9 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import PaymentIcon from '@material-ui/icons/Payment';
+import * as actions from '../../actions/actions';
 const useStyles = makeStyles({
     root: {
         width: '100%',
@@ -70,8 +72,8 @@ const NavBottom = () => {
     });
     const dishes = useSelector((state) => state.postDishesReducer.dishes);
     const [open, setOpen] = useState(false);
-    const [total, setTotal] = useState(0);
 
+    const dispatch = useDispatch();
     const handleOpen = () => {
         setOpen(true);
     };
@@ -86,6 +88,19 @@ const NavBottom = () => {
         history.push({
             pathname: '/',
         });
+    };
+    const deleteItem = (dish) => {
+        console.log(dish, 'form nav');
+        dish.isAdded = false;
+        const result = dishes.reduce((acc, value, index) => {
+            if (dish.nombrePlatillo != value.nombrePlatillo) {
+                acc.push(value);
+            }
+            return acc;
+        }, []);
+        const dishesArr = result;
+        console.log(dishesArr);
+        dispatch(actions.postDishes(dishesArr));
     };
     return (
         <Paper elevation={3} square className={classes.navBottom}>
@@ -106,6 +121,7 @@ const NavBottom = () => {
                     onClick={handleOpen}
                     icon={<AlarmOnIcon />}
                 />
+                <BottomNavigationAction label="Pagar" icon={<PaymentIcon />} />
                 <BottomNavigationAction
                     onClick={toggleDrawer('right', true)}
                     label="Menú"
@@ -154,7 +170,9 @@ const NavBottom = () => {
                                         <ListItemText
                                             primary={`$ ${item.costoPlatillo} MNX`}
                                         />
-                                        <IconButton aria-label="delete">
+                                        <IconButton
+                                            aria-label="delete"
+                                            onClick={() => deleteItem(item)}>
                                             <DeleteIcon />
                                         </IconButton>
                                         <Divider />
