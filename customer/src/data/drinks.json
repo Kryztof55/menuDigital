@@ -1,0 +1,25 @@
+{
+    "drinks": [
+        {
+            "id": 1,
+            "imgUrl": "/img/desayuno.jpg",
+            "hightlight": "Refrescos",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "link": "/refrescos"
+        },
+        {
+            "id": 1,
+            "imgUrl": "/img/desayuno.jpg",
+            "hightlight": "Cervezas",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "link": "/cerveza"
+        },
+        {
+            "id": 1,
+            "imgUrl": "/img/desayuno.jpg",
+            "hightlight": "Vinos",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "link": "/cerveza"
+        }
+    ]
+}
