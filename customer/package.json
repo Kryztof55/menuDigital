@@ -19,7 +19,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "data": "start json-server --watch ./src/data/detailsHightlights.json --port 8001 & start json-server --watch ./src/data/hightlightData.json --port 8000",
+        "data": "start json-server --watch ./src/data/detailsHightlights.json --port 8001 & start json-server --watch ./src/data/hightlightData.json --port 8000 & start json-server --watch ./src/data/drinks.json --port 8002",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",

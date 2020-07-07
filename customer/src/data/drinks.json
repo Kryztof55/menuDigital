@@ -1,25 +1,186 @@
 {
     "drinks": [
         {
+            "type": "Refrescos",
             "id": 1,
-            "imgUrl": "/img/desayuno.jpg",
-            "hightlight": "Refrescos",
+            "imgUrl": "/img/refrescos.jpg",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "link": "/refrescos"
+            "list": [
+                {
+                    "id": 1,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Coca-cola",
+                    "price": 20
+                },
+                {
+                    "id": 2,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Coca-cola light",
+                    "price": 20
+                },
+                {
+                    "id": 3,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Coca-cola Zero",
+                    "price": 20
+                },
+                {
+                    "id": 4,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Manzanita",
+                    "price": 20
+                }
+            ]
         },
         {
+            "type": "Cervezas",
             "id": 1,
-            "imgUrl": "/img/desayuno.jpg",
-            "hightlight": "Cervezas",
+            "imgUrl": "/img/cervezas.jpg",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "link": "/cerveza"
+            "list": [
+                {
+                    "id": 1,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "victoria",
+                    "price": 20
+                },
+                {
+                    "id": 2,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Corona",
+                    "price": 20
+                },
+                {
+                    "id": 3,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Indio",
+                    "price": 20
+                },
+                {
+                    "id": 4,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "XX Lager",
+                    "price": 20
+                }
+            ]
         },
         {
+            "type": "Café",
+            "id": 1,
+            "imgUrl": "/img/cafe.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "list": [
+                {
+                    "id": 1,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Americano",
+                    "sizes": [
+                        { "size": "Chico", "price": 20 },
+                        { "size": "Mediano", "price": 30 },
+                        { "size": "Grande", "price": 40 }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Expreso",
+                    "sizes": [
+                        { "size": "Chico", "price": 20 },
+                        { "size": "Mediano", "price": 30 },
+                        { "size": "Grande", "price": 40 }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Mocha",
+                    "sizes": [
+                        { "size": "Chico", "price": 20 },
+                        { "size": "Mediano", "price": 30 },
+                        { "size": "Grande", "price": 40 }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Jugos",
+            "id": 1,
+            "imgUrl": "/img/jugos.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "list": [
+                {
+                    "id": 1,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Naranja",
+                    "sizes": [
+                        { "size": "Chico", "price": 20 },
+                        { "size": "Mediano", "price": 30 },
+                        { "size": "Grande", "price": 40 }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Naranjada Natural",
+                    "sizes": [
+                        { "size": "Chico", "price": 20 },
+                        { "size": "Mediano", "price": 30 },
+                        { "size": "Grande", "price": 40 }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Naranjada Mineral",
+                    "sizes": [
+                        { "size": "Chico", "price": 20 },
+                        { "size": "Mediano", "price": 30 },
+                        { "size": "Grande", "price": 40 }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Toronja",
+                    "sizes": [
+                        { "size": "Chico", "price": 20 },
+                        { "size": "Mediano", "price": 30 },
+                        { "size": "Grande", "price": 40 }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Vinos",
             "id": 1,
             "imgUrl": "/img/desayuno.jpg",
-            "hightlight": "Vinos",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "link": "/cerveza"
+            "list": [
+                {
+                    "id": 1,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Sangre de Cristo 3/4",
+                    "price": 200
+                },
+                {
+                    "id": 2,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Sangre de Toro 3/4",
+                    "price": 200
+                },
+                {
+                    "id": 3,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Voila",
+                    "price": 200
+                },
+                {
+                    "id": 4,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Copa",
+                    "price": 34
+                }
+            ]
         }
     ]
 }

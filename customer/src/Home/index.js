@@ -51,11 +51,6 @@ const Home = () => {
                         </Grid>
                     );
                 })}
-                {/* {console.log(
-                    hightlights.map((item) => {
-                        item.id;
-                    })
-                )} */}
             </Grid>
         </Container>
     );

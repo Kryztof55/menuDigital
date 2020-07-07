@@ -4,6 +4,7 @@ import { breakfastReducer } from './breakfast';
 import { mealReducer } from './meal';
 import { dinnerReducer } from './dinner';
 import { promotionsReducer } from './promotions';
+import { drinksReducer } from './drinks';
 import { postDishesReducer } from './postDishes';
 export default combineReducers({
     hightlightReducer,
@@ -12,4 +13,5 @@ export default combineReducers({
     dinnerReducer,
     promotionsReducer,
     postDishesReducer,
+    drinksReducer,
 });

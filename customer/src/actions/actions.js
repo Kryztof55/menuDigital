@@ -72,6 +72,21 @@ const getPromotions = () => {
         }
     };
 };
+
+const getDrinks = () => {
+    return async (dispatch) => {
+        try {
+            const res = await fetch('http://localhost:8002/drinks');
+            const drinks = await res.json();
+            dispatch({
+                type: actionTypes.GET_DRINKS,
+                drinks,
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
+};
 const postDishes = (dishes) => {
     return {
         type: actionTypes.POST_DISHES_TO_STATE,
@@ -85,4 +100,5 @@ export {
     getDinner,
     getPromotions,
     postDishes,
+    getDrinks,
 };

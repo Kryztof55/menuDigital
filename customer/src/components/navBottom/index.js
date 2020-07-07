@@ -17,14 +17,11 @@ import Menu from '../../utils/menu';
 import history from '../../history';
 import Modal from '@material-ui/core/Modal';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { useDispatch, useSelector } from 'react-redux';
 import PaymentIcon from '@material-ui/icons/Payment';
-import * as actions from '../../actions/actions';
+
 const useStyles = makeStyles({
     root: {
         width: '100%',
@@ -74,8 +71,8 @@ const NavBottom = () => {
     });
     const dishes = useSelector((state) => state.postDishesReducer.dishes);
     const [open, setOpen] = useState(false);
-    const [dishesArr, setDishesArray] = useState(dishes);
     const dispatch = useDispatch();
+
     const handleOpen = () => {
         setOpen(true);
     };
@@ -89,6 +86,12 @@ const NavBottom = () => {
     const handleClickHome = () => {
         history.push({
             pathname: '/',
+        });
+    };
+    const handleClick = (type) => {
+        history.push({
+            pathname: '/Submenu',
+            state: type,
         });
     };
     return (
@@ -126,7 +129,10 @@ const NavBottom = () => {
                     {Menu.map((item, index) => (
                         <ListItem
                             button
-                            onClick={toggleDrawer('right', false)}
+                            onClick={() => {
+                                toggleDrawer('right', false);
+                                handleClick(item.text);
+                            }}
                             key={item.text}>
                             <ListItemIcon>{item.icon}</ListItemIcon>
                             <ListItemText primary={item.text} />
