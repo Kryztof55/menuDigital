@@ -19,6 +19,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "data": "start json-server --watch ./src/data/detailsHightlights.json --port 8001 & start json-server --watch ./src/data/hightlightData.json --port 8000",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
@@ -55,8 +56,9 @@
         "@storybook/addons": "^5.3.19",
         "@storybook/preset-create-react-app": "^3.0.0",
         "@storybook/react": "^5.3.19",
-        "storybook-addon-responsive-views": "^2.3.0",
+        "concurrently": "^5.2.0",
         "redux-devtools": "^3.5.0",
-        "redux-mock-store": "1.5.4"
+        "redux-mock-store": "1.5.4",
+        "storybook-addon-responsive-views": "^2.3.0"
     }
 }

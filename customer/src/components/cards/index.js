@@ -8,14 +8,31 @@ import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import Button from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import * as actions from '../../actions/actions';
+import TextField from '@material-ui/core/TextField';
 import { useDispatch, useSelector } from 'react-redux';
-
+import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: '100%',
+        '& .MuiTextField-root': {
+            width: 50,
+        },
+        '& .MuiOutlinedInput-root': {
+            borderRadius: 0,
+        },
+        '& .MuiButtonBase-root': {
+            marginRight: 10,
+            marginLeft: 10,
+        },
+        '& .MuiInput-input': {
+            marginRight: 10,
+        },
     },
     color: {
         color: (props) => (props.color == 'red' ? '#FE6B8B' : '#D3D3D3'),
@@ -62,31 +79,31 @@ const FoodCard = ({
     const classes = useStyles();
     const [added, setAdded] = useState(false);
     const dispatch = useDispatch();
-    const dishes = useSelector((state) => state.postDishesReducer.dishes);
+    const [count, setCount] = useState(0);
     const handlerAddToOrder = (nombrePlatillo, costoPlatillo, isAdded) => {
         const dish = {
             nombrePlatillo,
             costoPlatillo,
             isAdded: false,
         };
-        if (!added) {
-            setAdded(true);
-            dish.isAdded = true;
-            dishesArr.push(dish);
-            dispatch(actions.postDishes(dishesArr));
-        } else {
-            setAdded(false);
-            dish.isAdded = false;
-            const result = dishesArr.reduce((acc, value, index) => {
-                if (dish.nombrePlatillo != value.nombrePlatillo) {
-                    acc.push(value);
-                }
-                return acc;
-            }, []);
-            dishesArr = [];
-            dishesArr = result;
-            dispatch(actions.postDishes(dishesArr));
-        }
+        dish.isAdded = true;
+        dishesArr.push(dish);
+        dispatch(actions.postDishes(dishesArr));
+    };
+    const handleRemovefromOrder = (nombrePlatillo, costoPlatillo, isAdded) => {
+        const dish = {
+            nombrePlatillo,
+            costoPlatillo,
+            isAdded: false,
+        };
+        dish.isAdded = false;
+        const index = dishesArr
+            .map((e) => {
+                return e.nombrePlatillo;
+            })
+            .indexOf(dish.nombrePlatillo);
+        dishesArr.splice(index, 1);
+        dispatch(actions.postDishes(dishesArr));
     };
 
     return (
@@ -97,12 +114,12 @@ const FoodCard = ({
             />
             <CardMedia className={classes.media} image={imgUrl} title={title} />
             <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" component="p">
                     {description}
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
-                <AddButton
+                {/* <AddButton
                     color={!added ? 'default' : 'red'}
                     onClick={() => {
                         handlerAddToOrder(
@@ -111,7 +128,41 @@ const FoodCard = ({
                             isAdded
                         );
                     }}
-                />
+                /> */}
+                <Grid>
+                    <Button
+                        variant="contained"
+                        disableElevation
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setCount(Math.max(count - 1, 0));
+                            handleRemovefromOrder(
+                                nombrePlatillo,
+                                costoPlatillo,
+                                isAdded
+                            );
+                        }}>
+                        <RemoveIcon fontSize="small" />
+                    </Button>
+                    <TextField
+                        id={`id-${nombrePlatillo}`}
+                        value={count}
+                        className={classes.inputClass}
+                        type="text"
+                        color="primary"
+                    />
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        disableElevation
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setCount(count + 1);
+                            handlerAddToOrder(nombrePlatillo, costoPlatillo);
+                        }}>
+                        <AddIcon fontSize="small" />
+                    </Button>
+                </Grid>
                 <Typography variant="body2" color="textSecondary" component="p">
                     {addToOrder}
                 </Typography>

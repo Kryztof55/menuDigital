@@ -73,7 +73,6 @@ const getPromotions = () => {
     };
 };
 const postDishes = (dishes) => {
-    console.log(dishes, 'from actions');
     return {
         type: actionTypes.POST_DISHES_TO_STATE,
         dishes,

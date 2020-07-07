@@ -26,7 +26,9 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: '100%',
         '& .MuiTextField-root': {
             width: 50,
-            border: 0,
+        },
+        '& .MuiOutlinedInput-root': {
+            borderRadius: '0 !important',
         },
     },
     media: {

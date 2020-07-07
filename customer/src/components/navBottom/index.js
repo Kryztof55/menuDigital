@@ -43,6 +43,8 @@ const useStyles = makeStyles({
         padding: 20,
         borderRadius: 10,
         backgroundColor: 'white',
+        maxHeight: 500,
+        overflowY: 'auto',
         '&:focus': {
             outline: 'none',
         },
@@ -55,7 +57,7 @@ const useStyles = makeStyles({
         paddingRight: 0,
     },
     textInOrder: {
-        width: 100,
+        width: 150,
         overflow: 'hidden',
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
@@ -72,7 +74,7 @@ const NavBottom = () => {
     });
     const dishes = useSelector((state) => state.postDishesReducer.dishes);
     const [open, setOpen] = useState(false);
-
+    const [dishesArr, setDishesArray] = useState(dishes);
     const dispatch = useDispatch();
     const handleOpen = () => {
         setOpen(true);
@@ -88,19 +90,6 @@ const NavBottom = () => {
         history.push({
             pathname: '/',
         });
-    };
-    const deleteItem = (dish) => {
-        console.log(dish, 'form nav');
-        dish.isAdded = false;
-        const result = dishes.reduce((acc, value, index) => {
-            if (dish.nombrePlatillo != value.nombrePlatillo) {
-                acc.push(value);
-            }
-            return acc;
-        }, []);
-        const dishesArr = result;
-        console.log(dishesArr);
-        dispatch(actions.postDishes(dishesArr));
     };
     return (
         <Paper elevation={3} square className={classes.navBottom}>
@@ -170,11 +159,6 @@ const NavBottom = () => {
                                         <ListItemText
                                             primary={`$ ${item.costoPlatillo} MNX`}
                                         />
-                                        <IconButton
-                                            aria-label="delete"
-                                            onClick={() => deleteItem(item)}>
-                                            <DeleteIcon />
-                                        </IconButton>
                                         <Divider />
                                     </ListItem>
                                 );
