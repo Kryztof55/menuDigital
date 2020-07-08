@@ -87,6 +87,79 @@ const getDrinks = () => {
         }
     };
 };
+
+const getEntradas = () => {
+    return async (dispatch) => {
+        try {
+            const res = await fetch('http://localhost:8003/entradas');
+            const entradas = await res.json();
+            dispatch({
+                type: actionTypes.GET_ENTRADAS,
+                entradas,
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
+};
+
+const getEnsaladas = () => {
+    return async (dispatch) => {
+        try {
+            const res = await fetch('http://localhost:8004/ensaladas');
+            const ensaladas = await res.json();
+            dispatch({
+                type: actionTypes.GET_ENSALADAS,
+                ensaladas,
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
+};
+const getAperitivos = () => {
+    return async (dispatch) => {
+        try {
+            const res = await fetch('http://localhost:8005/aperitivos');
+            const aperitivos = await res.json();
+            dispatch({
+                type: actionTypes.GET_APERITIVOS,
+                aperitivos,
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
+};
+const getPlatillos = () => {
+    return async (dispatch) => {
+        try {
+            const res = await fetch('http://localhost:8007/platillos');
+            const platillos = await res.json();
+            dispatch({
+                type: actionTypes.GET_PLATILLOS,
+                platillos,
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
+};
+
+const getPostres = () => {
+    return async (dispatch) => {
+        try {
+            const res = await fetch('http://localhost:8006/postres');
+            const postres = await res.json();
+            dispatch({
+                type: actionTypes.GET_POSTRES,
+                postres,
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
+};
 const postDishes = (dishes) => {
     return {
         type: actionTypes.POST_DISHES_TO_STATE,
@@ -101,4 +174,9 @@ export {
     getPromotions,
     postDishes,
     getDrinks,
+    getEntradas,
+    getEnsaladas,
+    getAperitivos,
+    getPlatillos,
+    getPostres,
 };

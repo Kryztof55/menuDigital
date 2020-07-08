@@ -1,0 +1,173 @@
+{
+    "platillos": [
+        {
+            "type": "Carne roja",
+            "id": 1,
+            "imgUrl": "/img/refrescos.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "list": [
+                {
+                    "id": 1,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Arrachera",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                },
+                {
+                    "id": 2,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Ribe eye",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                },
+                {
+                    "id": 3,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "T-bone",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                },
+                {
+                    "id": 4,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Chamorro",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                }
+            ]
+        },
+        {
+            "type": "Mariscos",
+            "id": 1,
+            "imgUrl": "/img/cervezas.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "list": [
+                {
+                    "id": 1,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Camarones a la diabla",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                },
+                {
+                    "id": 2,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Mojarra",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                },
+                {
+                    "id": 3,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Tostadas de Camaron",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                },
+                {
+                    "id": 4,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Ceviche",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                }
+            ]
+        },
+        {
+            "type": "Vegetarianos",
+            "id": 1,
+            "imgUrl": "/img/cafe.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "list": [
+                {
+                    "id": 1,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Tacos vegetarianos",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                },
+                {
+                    "id": 2,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Pozole vegetariano",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                },
+                {
+                    "id": 3,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Hamburguesa vegetariana",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                },
+                {
+                    "id": 4,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Ceviche vegetariano",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                }
+            ]
+        },
+        {
+            "type": "Pastas",
+            "id": 1,
+            "imgUrl": "/img/jugos.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "list": [
+                {
+                    "id": 1,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Pasta con salmón",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                },
+                {
+                    "id": 2,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Pasta con camaron",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                },
+                {
+                    "id": 3,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Pasta con quesos",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 320
+                }
+            ]
+        },
+        {
+            "type": "Pizzas",
+            "id": 1,
+            "imgUrl": "/img/desayuno.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "list": [
+                {
+                    "id": 1,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Peperoni",
+                    "price": 200
+                },
+                {
+                    "id": 2,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Hawiana",
+                    "price": 200
+                },
+                {
+                    "id": 3,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "Mar y tierra",
+                    "price": 200
+                },
+                {
+                    "id": 4,
+                    "imgUrl": "/img/desayuno.jpg",
+                    "name": "3 quesos",
+                    "price": 340
+                }
+            ]
+        }
+    ]
+}

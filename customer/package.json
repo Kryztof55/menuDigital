@@ -19,7 +19,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "data": "start json-server --watch ./src/data/detailsHightlights.json --port 8001 & start json-server --watch ./src/data/hightlightData.json --port 8000 & start json-server --watch ./src/data/drinks.json --port 8002",
+        "data": "start json-server --watch ./src/data/detailsHightlights.json --port 8001 & start json-server --watch ./src/data/hightlightData.json --port 8000 & start json-server --watch ./src/data/drinks.json --port 8002  & start json-server --watch ./src/data/entradas.json --port 8003  & start json-server --watch ./src/data/ensaladas.json --port 8004 & start json-server --watch ./src/data/aperitivos.json --port 8005 & start json-server --watch ./src/data/postres.json --port 8006 & start json-server --watch ./src/data/platillos.json --port 8007",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",

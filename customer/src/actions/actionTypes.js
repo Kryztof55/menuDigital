@@ -4,5 +4,10 @@ export const GET_MEAL = 'GET_MEAL';
 export const GET_DINNER = 'GET_DINNER';
 export const GET_PORMOTIONS = 'GET_PORMOTIONS';
 export const GET_DRINKS = 'GET_DRINKS';
+export const GET_ENTRADAS = 'GET_ENTRADAS';
+export const GET_ENSALADAS = 'GET_ENSALADAS';
+export const GET_APERITIVOS = 'GET_APERITIVOS';
+export const GET_PLATILLOS = 'GET_PLATILLOS';
+export const GET_POSTRES = 'GET_POSTRES';
 
 export const POST_DISHES_TO_STATE = 'POST_DISHES_TO_STATE';

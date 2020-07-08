@@ -88,9 +88,17 @@ const NavBottom = () => {
             pathname: '/',
         });
     };
+
     const handleClick = (type) => {
         history.push({
             pathname: '/Submenu',
+            state: type,
+        });
+    };
+    const handleClickDetails = (type) => {
+        //console.log(type);
+        history.push({
+            pathname: '/Menus',
             state: type,
         });
     };
@@ -130,8 +138,9 @@ const NavBottom = () => {
                         <ListItem
                             button
                             onClick={() => {
-                                toggleDrawer('right', false);
-                                handleClick(item.text);
+                                item.text == 'Bebidas'
+                                    ? handleClick(item.text)
+                                    : handleClickDetails(item.text);
                             }}
                             key={item.text}>
                             <ListItemIcon>{item.icon}</ListItemIcon>

@@ -15,7 +15,7 @@ const menu = [
         icon: <EcoIcon />,
     },
     {
-        text: 'Ensaldas',
+        text: 'Ensaladas',
         icon: <EcoIcon />,
     },
     {

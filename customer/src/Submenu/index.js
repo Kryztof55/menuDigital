@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import * as actions from '../actions/actions';
 import CardHightlight from '../components/cardHightlights';
+import history from '../history';
 import { useDispatch, useSelector, connect } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
@@ -22,8 +23,14 @@ const SubMenu = () => {
     }, []);
     const list = drinks;
     const handleMenu = (type) => {
-        console.log(type);
+        history.push({
+            pathname: '/Details',
+            state: type,
+        });
     };
+    if (!drinks) {
+        return <h1>Cargando...</h1>;
+    }
     return (
         <Container maxWidth="md" className={classes.container}>
             <Grid container spacing={3}>
