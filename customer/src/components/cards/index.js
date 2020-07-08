@@ -110,7 +110,7 @@ const FoodCard = ({
         <Card className={classes.root}>
             <CardHeader
                 title={nombrePlatillo}
-                subheader={`${costoPlatillo} MNX`}
+                subheader={`$ ${costoPlatillo} MNX`}
             />
             <CardMedia className={classes.media} image={imgUrl} title={title} />
             <CardContent>

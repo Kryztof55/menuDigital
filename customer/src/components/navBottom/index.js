@@ -98,7 +98,7 @@ const NavBottom = () => {
     const handleClickDetails = (type) => {
         //console.log(type);
         history.push({
-            pathname: '/Menus',
+            pathname: '/Details',
             state: type,
         });
     };

@@ -32,7 +32,6 @@ const PageMenu = (props) => {
         dispatch(actions.getPlatillos());
         dispatch(actions.getPostres());
         content(type);
-        console.log(type);
     }, [type]);
 
     const content = () => {
