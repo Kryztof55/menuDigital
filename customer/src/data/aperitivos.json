@@ -2,7 +2,7 @@
     "aperitivos": [
         {
             "id": 1,
-            "imgUrl": "/img/arrachera.jpg",
+            "imgUrl": "/img/alitasBufalo.jpg",
             "name": "Alitas búfalo",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -10,7 +10,7 @@
         },
         {
             "id": 2,
-            "imgUrl": "/img/chile.jpg",
+            "imgUrl": "/img/alitasParmesano.jpg",
             "name": "Alitas parmesano",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -18,7 +18,7 @@
         },
         {
             "id": 3,
-            "imgUrl": "/img/tacos.jpg",
+            "imgUrl": "/img/costillasBufalo.jpg",
             "name": "Costillas búfalo",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -26,8 +26,8 @@
         },
         {
             "id": 4,
-            "imgUrl": "/img/comida.jpg",
-            "name": "Dedos de queso",
+            "imgUrl": "/img/dedosQueso.jpg",
+            "name": "Desos de queso",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "isAdded": false

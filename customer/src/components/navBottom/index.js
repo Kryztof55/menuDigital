@@ -5,8 +5,8 @@ import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import HomeIcon from '@material-ui/icons/Home';
 import AlarmOnIcon from '@material-ui/icons/AlarmOn';
-import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
+
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -96,9 +96,9 @@ const NavBottom = () => {
         });
     };
     const handleClickDetails = (type) => {
-        //console.log(type);
+        console.log(type);
         history.push({
-            pathname: '/Details',
+            pathname: type,
             state: type,
         });
     };
@@ -140,7 +140,7 @@ const NavBottom = () => {
                             onClick={() => {
                                 item.text == 'Bebidas'
                                     ? handleClick(item.text)
-                                    : handleClickDetails(item.text);
+                                    : handleClickDetails(`/Menus/${item.text}`);
                             }}
                             key={item.text}>
                             <ListItemIcon>{item.icon}</ListItemIcon>

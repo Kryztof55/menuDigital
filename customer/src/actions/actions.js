@@ -161,6 +161,7 @@ const getPostres = () => {
     };
 };
 const postDishes = (dishes) => {
+    console.log(dishes);
     return {
         type: actionTypes.POST_DISHES_TO_STATE,
         dishes,

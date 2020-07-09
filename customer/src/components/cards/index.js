@@ -17,6 +17,7 @@ import * as actions from '../../actions/actions';
 import TextField from '@material-ui/core/TextField';
 import { useDispatch, useSelector } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: '100%',
@@ -75,6 +76,8 @@ const FoodCard = ({
     description,
     addToOrder,
     isAdded,
+    number,
+    id,
 }) => {
     const classes = useStyles();
     const [added, setAdded] = useState(false);
@@ -85,16 +88,24 @@ const FoodCard = ({
             nombrePlatillo,
             costoPlatillo,
             isAdded: false,
+            number: count + 1,
+            id,
         };
         dish.isAdded = true;
         dishesArr.push(dish);
         dispatch(actions.postDishes(dishesArr));
     };
-    const handleRemovefromOrder = (nombrePlatillo, costoPlatillo, isAdded) => {
+    const handleRemovefromOrder = (
+        nombrePlatillo,
+        costoPlatillo,
+        isAdded,
+        id
+    ) => {
         const dish = {
             nombrePlatillo,
             costoPlatillo,
             isAdded: false,
+            id,
         };
         dish.isAdded = false;
         const index = dishesArr

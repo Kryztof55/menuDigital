@@ -4,7 +4,7 @@ import EcoIcon from '@material-ui/icons/Eco';
 import CakeIcon from '@material-ui/icons/Cake';
 import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
-
+import LocalPizzaIcon from '@material-ui/icons/LocalPizza';
 const menu = [
     {
         text: 'Bebidas',
@@ -12,7 +12,7 @@ const menu = [
     },
     {
         text: 'Entradas',
-        icon: <EcoIcon />,
+        icon: <RestaurantMenuIcon />,
     },
     {
         text: 'Ensaladas',
@@ -20,11 +20,11 @@ const menu = [
     },
     {
         text: 'Aperitivos',
-        icon: <FastfoodIcon />,
+        icon: <LocalPizzaIcon />,
     },
     {
         text: 'Platos fuertes',
-        icon: <RestaurantMenuIcon />,
+        icon: <FastfoodIcon />,
     },
     {
         text: 'Postres',

@@ -2,7 +2,7 @@
     "ensaladas": [
         {
             "id": 1,
-            "imgUrl": "/img/arrachera.jpg",
+            "imgUrl": "/img/ensaladaCesar.jpg",
             "name": "Ensalada Cesar",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -10,7 +10,7 @@
         },
         {
             "id": 2,
-            "imgUrl": "/img/chile.jpg",
+            "imgUrl": "/img/ensaladaAlfredo.jpg",
             "name": "Ensalada Alfredo",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -18,7 +18,7 @@
         },
         {
             "id": 3,
-            "imgUrl": "/img/tacos.jpg",
+            "imgUrl": "/img/ensaladaPepino.jpg",
             "name": "Ensalada de pepino",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -26,7 +26,7 @@
         },
         {
             "id": 4,
-            "imgUrl": "/img/comida.jpg",
+            "imgUrl": "/img/ensaladaFrutal.jpg",
             "name": "Ensalada frutal de la casa",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

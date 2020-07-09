@@ -19,16 +19,19 @@ const PageDetails = (props) => {
     const meal = useSelector((state) => state.mealReducer.meal);
     const dinner = useSelector((state) => state.dinnerReducer.dinner);
     const drinks = useSelector((state) => state.drinksReducer.drinks);
+    const dishes = useSelector((state) => state.postDishesReducer.dishes);
+    let number = 0;
+    let name = '';
+    if (!dishes) {
+        console.log('no dishes');
+        //;
+    } else {
+        number = dishes[dishes.length - 1].number;
+    }
+
     const promotions = useSelector(
         (state) => state.promotionsReducer.promotions
     );
-    const entradas = useSelector((state) => state.entradasReducer.entradas);
-    const ensaladas = useSelector((state) => state.ensaladasReducer.ensaladas);
-    const aperitivos = useSelector(
-        (state) => state.aperitivosReducer.aperitivos
-    );
-    const postres = useSelector((state) => state.postresReducer.postres);
-
     let detailId = props.location.state;
     const [typeFood, setTypeFood] = useState([]);
     useEffect(() => {
@@ -36,14 +39,9 @@ const PageDetails = (props) => {
         dispatch(actions.getMeal());
         dispatch(actions.getDinner());
         dispatch(actions.getPromotions());
-        dispatch(actions.getEntradas());
-        dispatch(actions.getEnsaladas());
-        dispatch(actions.getAperitivos());
-        dispatch(actions.getPlatillos());
-        dispatch(actions.getPostres());
         content(detailId);
     }, [detailId]);
-
+    console.log(typeFood);
     const content = () => {
         switch (detailId) {
             case 1:
@@ -61,14 +59,22 @@ const PageDetails = (props) => {
                 if (drinks.length) {
                     return setTypeFood(drinks[0].list);
                 }
-            case 'Entradas':
-                return setTypeFood(entradas);
-            case 'Ensaladas':
-                return setTypeFood(ensaladas);
-            case 'Aperitivos':
-                return setTypeFood(aperitivos);
-            case 'Postres':
-                return setTypeFood(postres);
+            case 'Cervezas':
+                if (drinks.length) {
+                    return setTypeFood(drinks[1].list);
+                }
+            case 'Café':
+                if (drinks.length) {
+                    return setTypeFood(drinks[2].list);
+                }
+            case 'Jugos':
+                if (drinks.length) {
+                    return setTypeFood(drinks[3].list);
+                }
+            case 'Vinos':
+                if (drinks.length) {
+                    return setTypeFood(drinks[4].list);
+                }
         }
     };
 
@@ -84,7 +90,9 @@ const PageDetails = (props) => {
                             title={item.name}
                             description={item.description}
                             addToOrder="Agregar a orden"
-                            isAdded={item.isAdded}></FoodCard>
+                            isAdded={item.isAdded}
+                            number={number}
+                            id={item.id}></FoodCard>
                     </Grid>
                 ))}
             </Grid>

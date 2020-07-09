@@ -1,36 +1,29 @@
 {
     "platillos": [
         {
-            "type": "Carne roja",
+            "type": "Cortes",
             "id": 1,
-            "imgUrl": "/img/refrescos.jpg",
+            "imgUrl": "/img/cortes.jpg",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "list": [
                 {
                     "id": 1,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/arrachera.jpg",
                     "name": "Arrachera",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
                 },
                 {
                     "id": 2,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/RibeEye.jpg",
                     "name": "Ribe eye",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
                 },
                 {
                     "id": 3,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/tbone.jpg",
                     "name": "T-bone",
-                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    "price": 320
-                },
-                {
-                    "id": 4,
-                    "imgUrl": "/img/desayuno.jpg",
-                    "name": "Chamorro",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
                 }
@@ -44,28 +37,28 @@
             "list": [
                 {
                     "id": 1,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/camaronesDiabla.jpg",
                     "name": "Camarones a la diabla",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
                 },
                 {
                     "id": 2,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/mojarra.jpg",
                     "name": "Mojarra",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
                 },
                 {
                     "id": 3,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/tostadasCamaron.jpg",
                     "name": "Tostadas de Camaron",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
                 },
                 {
                     "id": 4,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/ceviche.jpg",
                     "name": "Ceviche",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
@@ -75,33 +68,33 @@
         {
             "type": "Vegetarianos",
             "id": 1,
-            "imgUrl": "/img/cafe.jpg",
+            "imgUrl": "/img/vegetariano.jpg",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "list": [
                 {
                     "id": 1,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/tacoVegetariano.jpg",
                     "name": "Tacos vegetarianos",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
                 },
                 {
                     "id": 2,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/pozoleVegetariano.jpg",
                     "name": "Pozole vegetariano",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
                 },
                 {
                     "id": 3,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/hamburguezaVegetariana.jpg",
                     "name": "Hamburguesa vegetariana",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
                 },
                 {
                     "id": 4,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/cevicheVegetariano.jpg",
                     "name": "Ceviche vegetariano",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
@@ -111,26 +104,26 @@
         {
             "type": "Pastas",
             "id": 1,
-            "imgUrl": "/img/jugos.jpg",
+            "imgUrl": "/img/pastas.jpg",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "list": [
                 {
                     "id": 1,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/pastaSalmon.jpg",
                     "name": "Pasta con salmón",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
                 },
                 {
                     "id": 2,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/pastaCamaron.jpg",
                     "name": "Pasta con camaron",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
                 },
                 {
                     "id": 3,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/pastaQuesos.jpg",
                     "name": "Pasta con quesos",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "price": 320
@@ -140,30 +133,30 @@
         {
             "type": "Pizzas",
             "id": 1,
-            "imgUrl": "/img/desayuno.jpg",
+            "imgUrl": "/img/pizzas.jpg",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "list": [
                 {
                     "id": 1,
-                    "imgUrl": "/img/desayuno.jpg",
-                    "name": "Peperoni",
+                    "imgUrl": "/img/pizzaPepperoni.jpg",
+                    "name": "Pepperoni",
                     "price": 200
                 },
                 {
                     "id": 2,
-                    "imgUrl": "/img/desayuno.jpg",
-                    "name": "Hawiana",
+                    "imgUrl": "/img/mexicana.jpg",
+                    "name": "Mexicana",
                     "price": 200
                 },
                 {
                     "id": 3,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/marytierra.jpg",
                     "name": "Mar y tierra",
                     "price": 200
                 },
                 {
                     "id": 4,
-                    "imgUrl": "/img/desayuno.jpg",
+                    "imgUrl": "/img/quesos.jpg",
                     "name": "3 quesos",
                     "price": 340
                 }
