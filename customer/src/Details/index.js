@@ -41,7 +41,6 @@ const PageDetails = (props) => {
         dispatch(actions.getPromotions());
         content(detailId);
     }, [detailId]);
-    console.log(typeFood);
     const content = () => {
         switch (detailId) {
             case 1:
