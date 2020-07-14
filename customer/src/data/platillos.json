@@ -32,7 +32,7 @@
         {
             "type": "Mariscos",
             "id": 1,
-            "imgUrl": "/img/cervezas.jpg",
+            "imgUrl": "/img/mariscos.jpg",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "list": [
                 {

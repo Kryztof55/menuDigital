@@ -7,6 +7,7 @@ import Submenu from './Submenu';
 import MenuEntradas from './Menus/Entradas';
 import MenuEnsaladas from './Menus/Ensaladas';
 import MenuAperitivos from './Menus/Aperitivos';
+import MenuPostres from './Menus/Postres';
 
 export default class Routes extends Component {
     render() {
@@ -34,7 +35,7 @@ export default class Routes extends Component {
                     <Route
                         path="/Menus/Postres"
                         exact
-                        component={MenuEnsaladas}
+                        component={MenuPostres}
                     />
                 </Switch>
             </Router>

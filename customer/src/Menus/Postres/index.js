@@ -15,19 +15,19 @@ const useStyles = makeStyles((theme) => ({
 const MenuPostres = (props) => {
     const dispatch = useDispatch();
     const classes = useStyles();
-    const aperitivos = useSelector(
-        (state) => state.aperitivosReducer.aperitivos
+    const postres = useSelector(
+        (state) => state.postresReducer.postres
     );
     useEffect(() => {
-        dispatch(actions.getAperitivos());
+        dispatch(actions.getPostres());
     }, []);
-    if (!aperitivos) {
+    if (!postres) {
         return <h1>Cargando...</h1>;
     }
     return (
         <Container maxWidth="md" className={classes.container}>
             <Grid container spacing={3}>
-                {aperitivos?.map((item, index) => (
+                {postres?.map((item, index) => (
                     <Grid item key={item.id} xs={12} sm={6} md={3}>
                         <FoodCard
                             nombrePlatillo={item.name}

@@ -20,6 +20,7 @@ const PageDetails = (props) => {
     const dinner = useSelector((state) => state.dinnerReducer.dinner);
     const drinks = useSelector((state) => state.drinksReducer.drinks);
     const dishes = useSelector((state) => state.postDishesReducer.dishes);
+    const platillos = useSelector((state) => state.platillosReducer.platillos);
     let number = 0;
     let name = '';
     if (!dishes) {
@@ -39,6 +40,7 @@ const PageDetails = (props) => {
         dispatch(actions.getMeal());
         dispatch(actions.getDinner());
         dispatch(actions.getPromotions());
+        dispatch(actions.getPlatillos());
         content(detailId);
     }, [detailId]);
     const content = () => {
@@ -74,6 +76,27 @@ const PageDetails = (props) => {
                 if (drinks.length) {
                     return setTypeFood(drinks[4].list);
                 }
+            case 'Cortes':
+                if (platillos.length) {
+                    return setTypeFood(platillos[0].list);
+                }
+            case 'Mariscos':
+                if (platillos.length) {
+                    return setTypeFood(platillos[1].list);
+                }
+            case 'Vegetarianos':
+                if (platillos.length) {
+                    return setTypeFood(platillos[2].list);
+                }
+            
+            case 'Pastas':
+                if (platillos.length) {
+                    return setTypeFood(platillos[3].list);
+                }
+            case 'Pizzas':
+                if (platillos.length) {
+                    return setTypeFood(platillos[4].list);
+                } 
         }
     };
 

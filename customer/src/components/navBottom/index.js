@@ -96,7 +96,6 @@ const NavBottom = () => {
         });
     };
     const handleClickDetails = (type) => {
-        console.log(type);
         history.push({
             pathname: type,
             state: type,
@@ -138,7 +137,7 @@ const NavBottom = () => {
                         <ListItem
                             button
                             onClick={() => {
-                                item.text == 'Bebidas'
+                                item.text == 'Bebidas' || item.text == 'Platos fuertes'
                                     ? handleClick(item.text)
                                     : handleClickDetails(`/Menus/${item.text}`);
                             }}

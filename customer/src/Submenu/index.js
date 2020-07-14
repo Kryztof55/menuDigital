@@ -14,14 +14,27 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const SubMenu = () => {
+const SubMenu = (props) => {
     const dispatch = useDispatch();
     const classes = useStyles();
     const drinks = useSelector((state) => state.drinksReducer.drinks);
+    const platillos = useSelector((state) => state.platillosReducer.platillos);
     useEffect(() => {
         dispatch(actions.getDrinks());
+        dispatch(actions.getPlatillos());
     }, []);
-    const list = drinks;
+    let list = []
+    let path = props.location.state;
+    console.log(path)
+    if(path){
+        if (path == "Bebidas"){
+            list = drinks;
+        }
+        if (path == "Platos fuertes"){
+            list = platillos;
+        }
+    }
+     
     const handleMenu = (type) => {
         history.push({
             pathname: '/Details',
@@ -34,7 +47,7 @@ const SubMenu = () => {
     return (
         <Container maxWidth="md" className={classes.container}>
             <Grid container spacing={3}>
-                {list?.map((element, index) => {
+                {list.map((element, index) => {
                     return (
                         <Grid
                             item
