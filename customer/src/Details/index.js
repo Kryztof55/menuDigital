@@ -12,29 +12,13 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: theme.spacing(10),
     },
 }));
+let typeFood = ""
 const PageDetails = (props) => {
     const dispatch = useDispatch();
     const classes = useStyles();
-    const breakfast = useSelector((state) => state.breakfastReducer.breakfast);
-    const meal = useSelector((state) => state.mealReducer.meal);
-    const dinner = useSelector((state) => state.dinnerReducer.dinner);
-    const drinks = useSelector((state) => state.drinksReducer.drinks);
-    const dishes = useSelector((state) => state.postDishesReducer.dishes);
-    const platillos = useSelector((state) => state.platillosReducer.platillos);
-    let number = 0;
-    let name = '';
-    if (!dishes) {
-        console.log('no dishes');
-        //;
-    } else {
-        number = dishes[dishes.length - 1].number;
-    }
-
-    const promotions = useSelector(
-        (state) => state.promotionsReducer.promotions
-    );
+    
     let detailId = props.location.state;
-    const [typeFood, setTypeFood] = useState([]);
+    //const [typeFood, setTypeFood] = useState([]);
     useEffect(() => {
         dispatch(actions.getBreakfast());
         dispatch(actions.getMeal());
@@ -43,67 +27,86 @@ const PageDetails = (props) => {
         dispatch(actions.getPlatillos());
         content(detailId);
     }, [detailId]);
+    const breakfast = useSelector((state) => state.breakfastReducer.breakfast);
+    const meal = useSelector((state) => state.mealReducer.meal);
+    const dinner = useSelector((state) => state.dinnerReducer.dinner);
+    const drinks = useSelector((state) => state.drinksReducer.drinks);
+    const dishes = useSelector((state) => state.postDishesReducer.dishes);
+    const platillos = useSelector((state) => state.platillosReducer.platillos);
+    const promotions = useSelector(
+        (state) => state.promotionsReducer.promotions
+    );
+    let number = 0;
+    let name = '';
+    if (!dishes) {
+        console.log('no dishes');
+        //;
+    } else {
+        number = dishes[dishes.length - 1].number;
+    }
     const content = () => {
+        
         switch (detailId) {
             case 1:
-                return setTypeFood(breakfast);
-
+                return typeFood = breakfast
             case 2:
-                return setTypeFood(meal);
-
+                return typeFood = meal
             case 3:
-                return setTypeFood(dinner);
-
+                return typeFood = dinner
             case 4:
-                return setTypeFood(promotions);
+                return typeFood = promotions
             case 'Refrescos':
                 if (drinks.length) {
-                    return setTypeFood(drinks[0].list);
+                    return typeFood = drinks[0].list
                 }
             case 'Cervezas':
                 if (drinks.length) {
-                    return setTypeFood(drinks[1].list);
+                    return typeFood = drinks[1].list
                 }
             case 'Café':
                 if (drinks.length) {
-                    return setTypeFood(drinks[2].list);
+                    return typeFood = drinks[2].list
                 }
             case 'Jugos':
                 if (drinks.length) {
-                    return setTypeFood(drinks[3].list);
+                    return typeFood = drinks[3].list
                 }
             case 'Vinos':
                 if (drinks.length) {
-                    return setTypeFood(drinks[4].list);
+                    return typeFood = drinks[4].list
                 }
             case 'Cortes':
                 if (platillos.length) {
-                    return setTypeFood(platillos[0].list);
+                    return typeFood = platillos[0].list
                 }
             case 'Mariscos':
                 if (platillos.length) {
-                    return setTypeFood(platillos[1].list);
+                    return typeFood = platillos[1].list
                 }
             case 'Vegetarianos':
                 if (platillos.length) {
-                    return setTypeFood(platillos[2].list);
+                    return typeFood = platillos[2].list
                 }
-            
             case 'Pastas':
                 if (platillos.length) {
-                    return setTypeFood(platillos[3].list);
+                    return typeFood = platillos[3].list
                 }
             case 'Pizzas':
                 if (platillos.length) {
-                    return setTypeFood(platillos[4].list);
+                    return typeFood = platillos[4].list
                 } 
         }
     };
-
+    if(typeFood == undefined){//
+        content(detailId);
+    }
+    if(!typeFood){
+        return <h1>Cargando...</h1>
+    }
     return (
         <Container maxWidth="md" className={classes.container}>
             <Grid container spacing={3}>
-                {typeFood?.map((item, index) => (
+                {typeFood.map((item, index) => (
                     <Grid item key={item.id} xs={12} sm={6} md={3}>
                         <FoodCard
                             nombrePlatillo={item.name}

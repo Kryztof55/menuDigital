@@ -26,13 +26,12 @@ const SubMenu = (props) => {
     let list = []
     let path = props.location.state;
     console.log(path)
-    if(path){
-        if (path == "Bebidas"){
-            list = drinks;
-        }
-        if (path == "Platos fuertes"){
-            list = platillos;
-        }
+
+    if (path == "Bebidas"){
+        list = drinks;
+    }
+    if (path == "Platos fuertes"){
+        list = platillos;
     }
      
     const handleMenu = (type) => {
@@ -41,7 +40,7 @@ const SubMenu = (props) => {
             state: type,
         });
     };
-    if (!drinks) {
+    if (!list) {
         return <h1>Cargando...</h1>;
     }
     return (

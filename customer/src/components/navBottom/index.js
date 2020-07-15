@@ -80,8 +80,20 @@ const NavBottom = () => {
     const handleClose = () => {
         setOpen(false);
     };
-    const toggleDrawer = (anchor, open) => (event) => {
+    const toggleDrawer = (anchor, open, item) => (event) => {
+        console.log(item)
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+          }
         setState({ ...state, [anchor]: open });
+        if(item != undefined){
+            if(item == "Bebidas" || item == "Platos fuertes"){
+                handleClick(item)
+            }
+            else{
+                handleClickDetails(`/Menus/${item}`);
+            }
+        }
     };
     const handleClickHome = () => {
         history.push({
@@ -136,11 +148,7 @@ const NavBottom = () => {
                     {Menu.map((item, index) => (
                         <ListItem
                             button
-                            onClick={() => {
-                                item.text == 'Bebidas' || item.text == 'Platos fuertes'
-                                    ? handleClick(item.text)
-                                    : handleClickDetails(`/Menus/${item.text}`);
-                            }}
+                            onClick={toggleDrawer('right', false, item.text)}
                             key={item.text}>
                             <ListItemIcon>{item.icon}</ListItemIcon>
                             <ListItemText primary={item.text} />
