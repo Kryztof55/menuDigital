@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const AddButton = (props) => {
+/* const AddButton = (props) => {
     const { color, onClick } = props;
     const classes = useStyles(props);
 
@@ -66,7 +66,7 @@ const AddButton = (props) => {
             <FavoriteIcon className={classes.color} />
         </IconButton>
     );
-};
+}; */
 let dishesArr = [];
 const FoodCard = ({
     nombrePlatillo,

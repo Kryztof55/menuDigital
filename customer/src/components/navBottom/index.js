@@ -6,7 +6,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import HomeIcon from '@material-ui/icons/Home';
 import AlarmOnIcon from '@material-ui/icons/AlarmOn';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
-
+import HorizontalStepper from '../stepper'
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -71,6 +71,7 @@ const NavBottom = () => {
     });
     const dishes = useSelector((state) => state.postDishesReducer.dishes);
     const [open, setOpen] = useState(false);
+    const [isConfirmed, setIsConfirmed] = useState(false)
     const dispatch = useDispatch();
 
     const handleOpen = () => {
@@ -113,6 +114,9 @@ const NavBottom = () => {
             state: type,
         });
     };
+    const handleConfirmed = () =>{
+        setIsConfirmed(true)
+    }
     return (
         <Paper elevation={3} square className={classes.navBottom}>
             <BottomNavigation
@@ -163,49 +167,57 @@ const NavBottom = () => {
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description">
                 <div className={classes.modalInt}>
-                    <Typography variant="h4">Revisa tu orden</Typography>
-                    <List>
-                        {!dishes ? (
-                            <p>Aún no agregas nada a tu orden</p>
-                        ) : (
-                            dishes.map((item, index) => {
-                                return (
-                                    <ListItem
-                                        key={index}
-                                        className={classes.tab}>
-                                        <Typography
-                                            className={classes.textInOrder}
-                                            variant="body2">
-                                            {item.nombrePlatillo}
-                                        </Typography>
-                                        <ListItemText
-                                            primary={`$ ${item.costoPlatillo} MNX`}
-                                        />
-                                        <Divider />
-                                    </ListItem>
-                                );
-                            })
-                        )}
-                    </List>
-                    <Typography variant="h6">
-                        Total $
-                        {dishes?.reduce(
-                            (sum, { costoPlatillo }) => sum + costoPlatillo,
-                            0
-                        )}
-                    </Typography>
-                    <Grid
-                        container
-                        direction="row"
-                        justify="center"
-                        alignItems="center">
-                        <Button
-                            className={classes.confirm}
-                            variant="contained"
-                            color="primary">
-                            Confirmar
-                        </Button>
-                    </Grid>
+                    {!isConfirmed ?
+                        <React.Fragment>
+                            <Typography variant="h4">Revisa tu orden</Typography>
+                            <List>
+                                {!dishes ? (
+                                    <p>Aún no agregas nada a tu orden</p>
+                                ) : (
+                                    dishes.map((item, index) => {
+                                        return (
+                                            <ListItem
+                                                key={index}
+                                                className={classes.tab}>
+                                                <Typography
+                                                    className={classes.textInOrder}
+                                                    variant="body2">
+                                                    {item.nombrePlatillo}
+                                                </Typography>
+                                                <ListItemText
+                                                    primary={`$ ${item.costoPlatillo} MNX`}
+                                                />
+                                                <Divider />
+                                            </ListItem>
+                                        );
+                                    })
+                                )}
+                            </List>
+                            <Typography variant="h6">
+                                Total $
+                                {dishes?.reduce(
+                                    (sum, { costoPlatillo }) => sum + costoPlatillo,
+                                    0
+                                )}
+                            </Typography>
+                            <Grid
+                                container
+                                direction="row"
+                                justify="center"
+                                alignItems="center">
+                                <Button
+                                    className={classes.confirm}
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={dishes && handleConfirmed}
+                                    >
+                                    Confirmar
+                                </Button>
+                            </Grid>
+                        </React.Fragment>
+                        :
+                        <HorizontalStepper/>
+                    }
                 </div>
             </Modal>
         </Paper>
