@@ -12,11 +12,11 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: theme.spacing(10),
     },
 }));
-let typeFood = ""
+let typeFood = '';
 const PageDetails = (props) => {
     const dispatch = useDispatch();
     const classes = useStyles();
-    
+
     let detailId = props.location.state;
     //const [typeFood, setTypeFood] = useState([]);
     useEffect(() => {
@@ -45,63 +45,75 @@ const PageDetails = (props) => {
         number = dishes[dishes.length - 1].number;
     }
     const content = () => {
-        
         switch (detailId) {
             case 1:
-                return typeFood = breakfast
+                return (typeFood = breakfast);
             case 2:
-                return typeFood = meal
+                return (typeFood = meal);
             case 3:
-                return typeFood = dinner
+                return (typeFood = dinner);
             case 4:
-                return typeFood = promotions
+                return (typeFood = promotions);
             case 'Refrescos':
                 if (drinks.length) {
-                    return typeFood = drinks[0].list
+                    return (typeFood = drinks[0].list);
                 }
+                break;
             case 'Cervezas':
                 if (drinks.length) {
-                    return typeFood = drinks[1].list
+                    return (typeFood = drinks[1].list);
                 }
+                break;
             case 'Café':
                 if (drinks.length) {
-                    return typeFood = drinks[2].list
+                    return (typeFood = drinks[2].list);
                 }
+                break;
             case 'Jugos':
                 if (drinks.length) {
-                    return typeFood = drinks[3].list
+                    return (typeFood = drinks[3].list);
                 }
+                break;
             case 'Vinos':
                 if (drinks.length) {
-                    return typeFood = drinks[4].list
+                    return (typeFood = drinks[4].list);
                 }
+                break;
             case 'Cortes':
                 if (platillos.length) {
-                    return typeFood = platillos[0].list
+                    return (typeFood = platillos[0].list);
                 }
+                break;
             case 'Mariscos':
                 if (platillos.length) {
-                    return typeFood = platillos[1].list
+                    return (typeFood = platillos[1].list);
                 }
+                break;
             case 'Vegetarianos':
                 if (platillos.length) {
-                    return typeFood = platillos[2].list
+                    return (typeFood = platillos[2].list);
                 }
+                break;
             case 'Pastas':
                 if (platillos.length) {
-                    return typeFood = platillos[3].list
+                    return (typeFood = platillos[3].list);
                 }
+                break;
             case 'Pizzas':
                 if (platillos.length) {
-                    return typeFood = platillos[4].list
-                } 
+                    return (typeFood = platillos[4].list);
+                }
+                break;
+            default:
+                return undefined;
         }
     };
-    if(typeFood == undefined){//
+    if (typeFood == undefined) {
+        //
         content(detailId);
     }
-    if(!typeFood){
-        return <h1>Cargando...</h1>
+    if (!typeFood) {
+        return <h1>Cargando...</h1>;
     }
     return (
         <Container maxWidth="md" className={classes.container}>
@@ -117,7 +129,9 @@ const PageDetails = (props) => {
                             addToOrder="Agregar a orden"
                             isAdded={item.isAdded}
                             number={number}
-                            id={item.id}></FoodCard>
+                            id={item.id}
+                            hasOptions={item.options}
+                            optionsContent={item.optionsContent}></FoodCard>
                     </Grid>
                 ))}
             </Grid>

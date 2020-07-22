@@ -74,6 +74,7 @@
                     "id": 1,
                     "imgUrl": "/img/americano.jpg",
                     "name": "Americano",
+                    "price": 20,
                     "sizes": [
                         { "size": "Chico", "price": 20 },
                         { "size": "Mediano", "price": 30 },
@@ -84,6 +85,7 @@
                     "id": 2,
                     "imgUrl": "/img/expresso.jpg",
                     "name": "Expresso",
+                    "price": 20,
                     "sizes": [
                         { "size": "Chico", "price": 20 },
                         { "size": "Mediano", "price": 30 },
@@ -94,6 +96,7 @@
                     "id": 3,
                     "imgUrl": "/img/mocha.jpg",
                     "name": "Mocha",
+                    "price": 20,
                     "sizes": [
                         { "size": "Chico", "price": 20 },
                         { "size": "Mediano", "price": 30 },
@@ -112,6 +115,7 @@
                     "id": 1,
                     "imgUrl": "/img/naranja.jpg",
                     "name": "Naranja",
+                    "price": 20,
                     "sizes": [
                         { "size": "Chico", "price": 20 },
                         { "size": "Mediano", "price": 30 },
@@ -122,6 +126,7 @@
                     "id": 2,
                     "imgUrl": "/img/naranjada.jpg",
                     "name": "Naranjada Natural",
+                    "price": 20,
                     "sizes": [
                         { "size": "Chico", "price": 20 },
                         { "size": "Mediano", "price": 30 },
@@ -132,6 +137,7 @@
                     "id": 3,
                     "imgUrl": "/img/naranjadaMineral.jpg",
                     "name": "Naranjada Mineral",
+                    "price": 20,
                     "sizes": [
                         { "size": "Chico", "price": 20 },
                         { "size": "Mediano", "price": 30 },
@@ -142,6 +148,7 @@
                     "id": 4,
                     "imgUrl": "/img/toronja.jpg",
                     "name": "Toronja",
+                    "price": 20,
                     "sizes": [
                         { "size": "Chico", "price": 20 },
                         { "size": "Mediano", "price": 30 },
@@ -152,6 +159,7 @@
                     "id": 5,
                     "imgUrl": "/img/verde.jpg",
                     "name": "Verde",
+                    "price": 20,
                     "sizes": [
                         { "size": "Chico", "price": 20 },
                         { "size": "Mediano", "price": 30 },

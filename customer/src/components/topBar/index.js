@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
+import Grid from '@material-ui/core/Grid';
 import {
     createMuiTheme,
     fade,
@@ -61,6 +62,10 @@ const useStyles = makeStyles((theme) => ({
             },
         },
     },
+    logo: {
+        width: 100,
+        marginRight: 10,
+    },
 }));
 
 const TopBar = () => {
@@ -70,9 +75,14 @@ const TopBar = () => {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography className={classes.title} variant="h6" noWrap>
-                        Logo
-                    </Typography>
+                    <Grid>
+                        <img
+                            className={classes.logo}
+                            src="/img/logo.png"
+                            alt="Logo"
+                        />
+                    </Grid>
+
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />

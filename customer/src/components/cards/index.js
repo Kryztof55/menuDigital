@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -13,11 +14,25 @@ import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import * as actions from '../../actions/actions';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import CommentIcon from '@material-ui/icons/Comment';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import TextField from '@material-ui/core/TextField';
-import { useDispatch, useSelector } from 'react-redux';
+import Collapse from '@material-ui/core/Collapse';
 import Grid from '@material-ui/core/Grid';
-
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../../actions/actions';
+import Checkbox from '@material-ui/core/Checkbox';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import ListItemText from '@material-ui/core/ListItemText';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: '100%',
@@ -55,6 +70,9 @@ const useStyles = makeStyles((theme) => ({
     avatar: {
         backgroundColor: red[500],
     },
+    sub: {
+        marginLeft: 50,
+    },
 }));
 
 /* const AddButton = (props) => {
@@ -74,15 +92,19 @@ const FoodCard = ({
     imgUrl,
     title,
     description,
-    addToOrder,
+
     isAdded,
     number,
     id,
+    hasOptions,
+    optionsContent,
 }) => {
     const classes = useStyles();
+    const [expanded, setExpanded] = useState(false);
     const [added, setAdded] = useState(false);
     const dispatch = useDispatch();
     const [count, setCount] = useState(0);
+    const [value, setValue] = useState('Revueltos');
     const handlerAddToOrder = (nombrePlatillo, costoPlatillo, isAdded) => {
         const dish = {
             nombrePlatillo,
@@ -116,6 +138,26 @@ const FoodCard = ({
         dishesArr.splice(index, 1);
         dispatch(actions.postDishes(dishesArr));
     };
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+    const [checked, setChecked] = React.useState([0]);
+
+    const handleToggle = (value) => () => {
+        const currentIndex = checked.indexOf(value);
+        const newChecked = [...checked];
+
+        if (currentIndex === -1) {
+            newChecked.push(value);
+        } else {
+            newChecked.splice(currentIndex, 1);
+        }
+
+        setChecked(newChecked);
+    };
+    const handleChangeRatio = (event) => {
+        setValue(event.target.value);
+    };
 
     return (
         <Card className={classes.root}>
@@ -140,44 +182,130 @@ const FoodCard = ({
                         );
                     }}
                 /> */}
-                <Grid>
-                    <Button
-                        variant="contained"
-                        disableElevation
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setCount(Math.max(count - 1, 0));
-                            handleRemovefromOrder(
-                                nombrePlatillo,
-                                costoPlatillo,
-                                isAdded
-                            );
-                        }}>
-                        <RemoveIcon fontSize="small" />
-                    </Button>
-                    <TextField
-                        id={`id-${nombrePlatillo}`}
-                        value={count}
-                        className={classes.inputClass}
-                        type="text"
-                        color="primary"
-                    />
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        disableElevation
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setCount(count + 1);
-                            handlerAddToOrder(nombrePlatillo, costoPlatillo);
-                        }}>
-                        <AddIcon fontSize="small" />
-                    </Button>
+                <Grid container justify="space-between">
+                    <Grid>
+                        <Button
+                            variant="contained"
+                            disableElevation
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setCount(Math.max(count - 1, 0));
+                                handleRemovefromOrder(
+                                    nombrePlatillo,
+                                    costoPlatillo,
+                                    isAdded
+                                );
+                            }}>
+                            <RemoveIcon fontSize="small" />
+                        </Button>
+                        <TextField
+                            id={`id-${nombrePlatillo}`}
+                            value={count}
+                            className={classes.inputClass}
+                            type="text"
+                            color="primary"
+                        />
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            disableElevation
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setCount(count + 1);
+                                handlerAddToOrder(
+                                    nombrePlatillo,
+                                    costoPlatillo
+                                );
+                            }}>
+                            <AddIcon fontSize="small" />
+                        </Button>
+                    </Grid>
+                    {hasOptions == true && (
+                        <IconButton
+                            className={clsx(classes.expand, {
+                                [classes.expandOpen]: expanded,
+                            })}
+                            onClick={handleExpandClick}
+                            aria-expanded={expanded}
+                            aria-label="show more">
+                            <ExpandMoreIcon />
+                        </IconButton>
+                    )}
                 </Grid>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    {addToOrder}
-                </Typography>
             </CardActions>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                    <Typography paragraph>Opciones</Typography>
+                    {optionsContent && (
+                        <List className={classes.root}>
+                            {optionsContent.map((value, index) => {
+                                const labelId = `checkbox-list-label-${value}`;
+                                return (
+                                    <div>
+                                        <ListItem
+                                            key={index}
+                                            role={undefined}
+                                            dense
+                                            button
+                                            onClick={handleToggle(value)}>
+                                            <ListItemIcon>
+                                                <Checkbox
+                                                    edge="start"
+                                                    checked={
+                                                        checked.indexOf(
+                                                            value
+                                                        ) !== -1
+                                                    }
+                                                    tabIndex={-1}
+                                                    disableRipple
+                                                    inputProps={{
+                                                        'aria-labelledby': labelId,
+                                                    }}
+                                                />
+                                            </ListItemIcon>
+                                            <ListItemText
+                                                id={labelId}
+                                                primary={`${value.element} $${value.price} `}
+                                            />
+                                        </ListItem>
+                                        <Grid container className={classes.sub}>
+                                            <FormControl component="fieldset">
+                                                <RadioGroup
+                                                    aria-label={value}
+                                                    name={value}
+                                                    value={value}
+                                                    onChange={
+                                                        handleChangeRatio
+                                                    }>
+                                                    {value != undefined
+                                                        ? value.type?.map(
+                                                              (type, index) => {
+                                                                  return (
+                                                                      <FormControlLabel
+                                                                          value={
+                                                                              type.name
+                                                                          }
+                                                                          control={
+                                                                              <Radio />
+                                                                          }
+                                                                          label={
+                                                                              type.name
+                                                                          }
+                                                                      />
+                                                                  );
+                                                              }
+                                                          )
+                                                        : null}
+                                                </RadioGroup>
+                                            </FormControl>
+                                        </Grid>
+                                    </div>
+                                );
+                            })}
+                        </List>
+                    )}
+                </CardContent>
+            </Collapse>
         </Card>
     );
 };

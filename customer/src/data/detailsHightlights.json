@@ -6,7 +6,8 @@
             "name": "Desayuno Americano",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         },
         {
             "id": 2,
@@ -14,7 +15,8 @@
             "name": "Desayuno continental",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         },
         {
             "id": 3,
@@ -22,7 +24,8 @@
             "name": "Molletes",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         },
         {
             "id": 4,
@@ -30,7 +33,31 @@
             "name": "Chilaquiles",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": true,
+            "optionsContent": [
+                {
+                    "element": "Bistec",
+                    "price": 5
+                },
+                {
+                    "element": "Cecina",
+                    "price": 10
+                },
+                {
+                    "element": "Huevo",
+                    "price": 5,
+                    "type": [
+                        { "name": "Revuelto" },
+                        { "name": "Estrellado" },
+                        { "name": "Volteado" }
+                    ]
+                },
+                {
+                    "element": "Arrachera",
+                    "price": 20
+                }
+            ]
         }
     ],
     "comidas": [
@@ -40,7 +67,8 @@
             "name": "Arrachera Asada",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         },
         {
             "id": 2,
@@ -48,7 +76,8 @@
             "name": "Chile en nogada",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         },
         {
             "id": 3,
@@ -56,7 +85,8 @@
             "name": "Tacos al pastor",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         },
         {
             "id": 4,
@@ -64,7 +94,8 @@
             "name": "Camarones a la diabla",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         }
     ],
     "cenas": [
@@ -74,7 +105,8 @@
             "name": "Chilaquiles",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         },
         {
             "id": 2,
@@ -82,7 +114,8 @@
             "name": "Mole",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         },
         {
             "id": 3,
@@ -90,7 +123,8 @@
             "name": "Tacos al pastor",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         },
         {
             "id": 4,
@@ -98,7 +132,8 @@
             "name": "Pavo",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         }
     ],
     "promociones": [
@@ -108,7 +143,8 @@
             "name": "Segundo trago gratis",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         },
         {
             "id": 2,
@@ -116,7 +152,8 @@
             "name": "2x1 en cerveza artesanal",
             "price": 330,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isAdded": false
+            "isAdded": false,
+            "options": false
         }
     ]
 }
